@@ -55,4 +55,33 @@ describe('UnitsAll.vue', () => {
     expect(filterUnitsMock).toHaveBeenCalledWith(mockSelectedFilters);
     expect(filterUnitsMock).toHaveBeenCalledTimes(1);
   });
+  it('methods work properly', () => {
+    store.filteredUnits = [{
+      name: "archer",
+      description: "A heavily armored vehicle.",
+      id: 1,
+    }];
+    store.resources = [
+      {
+        name: "Test",
+        color: "brown-darken-2",
+        range: [15, 15],
+        min: 0,
+        max: 200,
+        isSelected: false,
+      }
+    ];
+    store.ages = ["Test"]
+    const wrapper = mount(UnitsAll, {
+      global: {
+        plugins: [vuetify, pinia],
+      },
+    });
+    const filterSpy = vi.spyOn(store, 'filterUnits');
+    wrapper.vm.filterUnits({ ages: 'Feudal', resources: 'Wood' });
+    expect(wrapper.vm.ages).toEqual(store.ages);
+    expect(wrapper.vm.resources).toEqual(store.resources);
+    expect(wrapper.vm.filteredUnits).toEqual(store.filteredUnits);
+    expect(filterSpy).toHaveBeenCalled();
+  })
 });

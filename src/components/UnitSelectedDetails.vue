@@ -58,7 +58,6 @@ function randomUnit() {
 <style scoped module lang="scss">
 $button-bg-color: #2f5ac7;
 $table-border-color: #ddd;
-$table-row-hover-bg: #caf1a9;
 $table-first-row-bg: #f2eded;
 
 h1 {
