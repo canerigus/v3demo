@@ -59,38 +59,53 @@ function randomUnit() {
 $button-bg-color: #2f5ac7;
 $table-border-color: #ddd;
 $table-first-row-bg: #f2eded;
+$table-data-padding: 10px;
+$table-data-text-align: left;
+$table-data-font-weight: bold;
+$header-text-align: center;
+$header-margin-bottom: 0.75rem;
+$button-color: white;
+$button-padding: 0.5rem 1rem;
+$button-border: none;
+$button-cursor: pointer;
+$button-text-transform: capitalize;
+$table-width: 100%;
+$table-first-row-width: 30%;
+$table-first-row-font-weight: bold;
+$table-data-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$table-data-border: 1px solid $table-border-color;
 
 h1 {
-	text-align: center;
-	margin-bottom: 0.75rem;
+	text-align: $header-text-align;
+	margin-bottom: $header-margin-bottom;
 }
 
 button {
 	background-color: $button-bg-color;
-	font-weight: bold;
-	color: white;
-	padding: 0.5rem 1rem;
-	border: none;
-	cursor: pointer;
-	text-transform: capitalize;
+	font-weight: table-data-font-weight;
+	color: $button-color;
+	padding: $button-padding;
+	border: $button-border;
+	cursor: $button-cursor;
+	text-transform: $button-text-transform;
 }
 
 table {
-	width: 100%;
+	width: $table-width;
 	border-collapse: collapse;
-	border: 1px solid $table-border-color;
+	border: $table-data-border;
 
 	tr,
 	td {
-		padding: 10px;
-		text-align: left;
-		border: 1px solid $table-border-color;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		padding: $table-data-padding;
+		text-align: $table-data-text-align;
+		border: $table-data-border;
+		font-family: $table-data-font-family;
 	}
 
 	tr>td:first-child {
-		width: 30%;
-		font-weight: bold;
+		width: $table-first-row-width;
+		font-weight: $table-first-row-font-weight;
 		background-color: $table-first-row-bg;
 	}
 }

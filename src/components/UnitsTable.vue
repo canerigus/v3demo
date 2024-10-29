@@ -50,11 +50,13 @@ $table-header-bg-color: #f2eded;
 $table-padding: 0.75rem;
 $table-font-size: 0.9rem;
 $table-header-font-size: 1.1rem;
+$tbody-row-cursor: pointer;
+$thead-table-data-border: 1px solid $table-border-color;
 
 th,
 td {
 	padding: $table-padding;
-	border: 1px solid $table-border-color;
+	border: $thead-table-data-border;
 	font-size: $table-font-size;
 }
 
@@ -65,6 +67,6 @@ th {
 
 tbody>tr:hover {
 	background-color: $table-hover-bg-color;
-	cursor: pointer;
+	cursor: $tbody-row-cursor;
 }
 </style>
